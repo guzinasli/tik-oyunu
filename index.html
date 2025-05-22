@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tıklama Oyunu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tıklama Oyunu</h1>
+    <p><strong>Skor:</strong> <span id="score">0</span></p>
+    <p><strong>Rekor:</strong> <span id="highScore">0</span></p>
+    <p><strong>Kalan Süre:</strong> <span id="time">30</span> saniye</p>
+
+    <button id="clickBtn">Tıkla!</button>
+    <p id="message"></p>
+
+    <!-- Ses -->
+    <audio id="clickSound" src="click.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- Head içine ekle -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4CAF50">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => console.log("Service Worker kayıtlı:", reg))
+      .catch(err => console.error("Service Worker hatası:", err));
+  }
+</script>
